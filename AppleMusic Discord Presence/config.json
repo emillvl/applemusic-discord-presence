@@ -1,0 +1,8 @@
+{
+  "discord_client_id": "YOUR_DISCORD_CLIENT_ID",
+  "app_id_match": "applemusic",
+  "show_profile_button": false,
+  "profile_button_label": "Show Apple Music Profile",
+  "profile_url": "https://music.apple.com/profile/YOUR_APPLE_MUSIC_PROFILE_ID",
+  "poll_interval_seconds": 5
+}

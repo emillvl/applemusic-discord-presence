@@ -50,7 +50,7 @@ Shows what you're listening to on Apple Music directly on your Discord profile �
 **1. Clone the repo**
  
 ```bash
-git clone https://github.com/yourusername/applemusic-discord-presence.git
+git clone https://github.com/emillvl/applemusic-discord-presence.git
 cd applemusic-discord-presence
 ```
  
@@ -243,7 +243,7 @@ Apple Music'te ne dinlediğiniz, Discord profilinizde **gerçek zamanlı** olara
 **1. Repoyu klonla**
  
 ```bash
-git clone https://github.com/kullaniciadin/applemusic-discord-presence.git
+git clone https://github.com/emillvl/applemusic-discord-presence.git
 cd applemusic-discord-presence
 ```
  

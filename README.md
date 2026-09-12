@@ -52,12 +52,13 @@ Shows what you're listening to on Apple Music directly on your Discord profile �
 ```bash
 git clone https://github.com/emillvl/applemusic-discord-presence.git
 cd applemusic-discord-presence
+cd "AppleMusic Discord Presence"
 ```
  
 **2. Install dependencies**
  
 ```bash
-pip install -r requirements.txt
+python -m pip install -r "Description/requirements.txt"
 ```
  
 **3. Get a Discord Application ID**
@@ -67,18 +68,19 @@ This is required for any Rich Presence app — Discord's rule, not ours. Only do
 1. Go to [discord.com/developers/applications](https://discord.com/developers/applications) → **New Application**
 2. Name it anything (e.g. `"Apple Music"`) — this name won't appear on your profile
 3. Copy the **Application ID** from the General Information page
-**4. Create the config**
+**4. Configure your Application ID**
  
 ```bash
 python main.py
 ```
  
-The script auto-creates `config.json` on first run and stops. Open it, paste your ID:
+Open `config.json` in the `AppleMusic Discord Presence` folder and replace `discord_client_id` with your own Application ID, keeping the other fields. If the file is missing, the command above creates it and exits; edit it before running again.
+
+Example field (keep the rest of your JSON file):
  
 ```json
 {
-  "discord_client_id": "PASTE_HERE",
-  ...
+  "discord_client_id": "PASTE_HERE"
 }
 ```
  
@@ -180,12 +182,12 @@ pip install -U pypresence
 <summary><b>winsdk fails to install (build error)</b></summary>
 `winsdk` only has pre-built wheels for Python 3.10–3.12. On 3.13+, pip tries to compile from source which requires Visual Studio's C++ build tools.
  
-Solution — use a 3.12 virtual environment:
+From the `AppleMusic Discord Presence` folder, use a 3.12 virtual environment in Command Prompt:
  
 ```bash
 py -3.12 -m venv venv
 venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r "Description/requirements.txt"
 python main.py
 ```
  
@@ -245,12 +247,13 @@ Apple Music'te ne dinlediğiniz, Discord profilinizde **gerçek zamanlı** olara
 ```bash
 git clone https://github.com/emillvl/applemusic-discord-presence.git
 cd applemusic-discord-presence
+cd "AppleMusic Discord Presence"
 ```
  
 **2. Bağımlılıkları kur**
  
 ```bash
-pip install -r requirements.txt
+python -m pip install -r "Description/requirements.txt"
 ```
  
 **3. Discord Application ID al**
@@ -260,18 +263,19 @@ Bu adım, herhangi bir Rich Presence uygulaması için zorunlu — Discord'un ku
 1. [discord.com/developers/applications](https://discord.com/developers/applications) → **New Application**
 2. İsim ver (örn. `"Apple Music"`) — bu isim profilinde görünmez
 3. **General Information** sayfasından **Application ID**'yi kopyala
-**4. Config dosyasını oluştur**
+**4. Application ID değerini ayarla**
  
 ```bash
 python main.py
 ```
  
-Script ilk çalışmada `config.json` dosyasını otomatik oluşturur ve durur. Dosyayı aç, ID'yi yapıştır:
+`AppleMusic Discord Presence` klasöründeki `config.json` dosyasını aç ve diğer alanları koruyarak `discord_client_id` değerini kendi Application ID değerinle değiştir. Dosya yoksa yukarıdaki komut dosyayı oluşturur ve kapanır; tekrar çalıştırmadan önce düzenle.
+
+Örnek alan (JSON dosyandaki diğer alanları koru):
  
 ```json
 {
-  "discord_client_id": "BURAYA_YAPISTIR",
-  ...
+  "discord_client_id": "BURAYA_YAPISTIR"
 }
 ```
  
@@ -375,12 +379,12 @@ pip install -U pypresence
 <summary><b>winsdk kurulmuyor, derleme hatası veriyor</b></summary>
 `winsdk` yalnızca Python 3.10–3.12 için hazır paket sunuyor. 3.13+ kullanıyorsanız pip kaynaktan derlemeye çalışıyor, bu da Visual Studio C++ araçları gerektiriyor.
  
-Çözüm — Python 3.12 ile sanal ortam oluştur:
+`AppleMusic Discord Presence` klasöründe, Komut İstemi (CMD) ile Python 3.12 sanal ortamı oluştur:
  
 ```bash
 py -3.12 -m venv venv
 venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r "Description/requirements.txt"
 python main.py
 ```
  

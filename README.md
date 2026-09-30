@@ -16,7 +16,7 @@
  
 ### What does it do?
  
-Shows what you're listening to on Apple Music directly on your Discord profile — song title, artist, **real album art** and a progress bar. Exactly like the built-in Spotify integration, but for Apple Music.
+Shows the track currently playing in the Windows Apple Music app on your Discord profile, including the song title, artist, album art when available, and playback progress. It uses Windows media-session data for playback metadata and Discord Rich Presence for display.
  
 ```
 🎵  Listening to Apple Music
@@ -27,13 +27,12 @@ Shows what you're listening to on Apple Music directly on your Discord profile �
  
 ### Features
  
-- 🎵 **"Listening to Apple Music"** — not "Playing", exactly like Spotify
-- 🖼️ **Real album art** — pulled directly from Apple Music, not guessed
-- ⏱️ **Progress bar** — shows exactly where in the song you are
-- 👤 **Artist name** — shows in the compact label next to your name too
-- 🔗 **Apple Music profile button** — optional, one line in config
-- 🔄 **Zero manual effort** — set up once, runs forever
-- 🪶 **Lightweight** — ~60 MB RAM, silent background process
+- 🎵 **Listening activity** — publishes the session as "Listening to Apple Music"
+- 🖼️ **Album art** — uses artwork exposed by Apple Music when available, with an iTunes Search fallback
+- ⏱️ **Playback progress** — keeps Discord's progress indicator in sync with the current track
+- 👤 **Artist metadata** — includes the artist in the Rich Presence details
+- 🔗 **Optional profile button** — can link to an Apple Music profile from configuration
+- 🔄 **Optional startup helper** — can launch quietly when you sign in to Windows
 ### Requirements
  
 | | |
@@ -63,7 +62,7 @@ python -m pip install -r "Description/requirements.txt"
  
 **3. Get a Discord Application ID**
  
-This is required for any Rich Presence app — Discord's rule, not ours. Only done once, ever.
+Discord Rich Presence requires an Application ID. You only need to create it once for this setup.
  
 1. Go to [discord.com/developers/applications](https://discord.com/developers/applications) → **New Application**
 2. Name it anything (e.g. `"Apple Music"`) — this name won't appear on your profile
@@ -92,7 +91,7 @@ python main.py
  
 Play something in Apple Music. Discord updates within a few seconds.
  
-### Auto-start (no manual launching, ever)
+### Auto-start on Windows
  
 1. Open `start_hidden.vbs` in a text editor and replace the placeholder path with this folder's real path
 2. Press `Win + R`, type `shell:startup`, hit Enter — your Startup folder opens
@@ -211,7 +210,7 @@ For local files or rare releases, Apple Music sometimes doesn't provide a thumbn
  
 ### Ne Yapar?
  
-Apple Music'te ne dinlediğiniz, Discord profilinizde **gerçek zamanlı** olarak görünür — şarkı adı, sanatçı, **gerçek kapak resmi** ve ilerleme çubuğuyla birlikte. Spotify entegrasyonundan hiçbir farkı yok. Hatta bir üstünlüğü var: kapak resmini doğrudan Apple Music'in kendisinden çekiyor, tahmin etmiyor.
+Windows'taki Apple Music uygulamasında çalan parçayı Discord profilinizde gösterir. Şarkı adı, sanatçı, mevcutsa albüm kapağı ve oynatma ilerlemesi Discord Rich Presence üzerinden güncellenir.
  
 ```
 🎵  Listening to Apple Music
@@ -222,13 +221,12 @@ Apple Music'te ne dinlediğiniz, Discord profilinizde **gerçek zamanlı** olara
  
 ### Özellikler
  
-- 🎵 **"Listening to Apple Music"** — Spotify gibi, "Playing" değil
-- 🖼️ **Gerçek kapak resmi** — Apple Music'in verdiği tam resim, tahmin değil
-- ⏱️ **İlerleme çubuğu** — şarkının nerede olduğunu gösterir
-- 👤 **Sanatçı adı** — Discord'daki o küçük etikette de görünür
-- 🔗 **Apple Music profil butonu** — isteğe bağlı, tek satırla açılır
-- 🔄 **Sıfır manuel müdahale** — bir kez kur, her zaman çalışır
-- 🪶 **Hafif** — ~60 MB RAM, arka planda sessizce çalışır
+- 🎵 **Dinleme etkinliği** — oturumu "Listening to Apple Music" olarak yayınlar
+- 🖼️ **Albüm kapağı** — mevcutsa Apple Music'in sağladığı görseli, gerekirse iTunes Search yedeğini kullanır
+- ⏱️ **İlerleme çubuğu** — parçadaki mevcut konumu Discord'a aktarır
+- 👤 **Sanatçı bilgisi** — Rich Presence ayrıntılarına sanatçıyı ekler
+- 🔗 **İsteğe bağlı profil butonu** — yapılandırmadan Apple Music profilinize bağlanabilir
+- 🔄 **İsteğe bağlı otomatik başlatma** — Windows oturum açılışında sessizce çalıştırılabilir
 ### Gereksinimler
  
 | | |
@@ -258,7 +256,7 @@ python -m pip install -r "Description/requirements.txt"
  
 **3. Discord Application ID al**
  
-Bu adım, herhangi bir Rich Presence uygulaması için zorunlu — Discord'un kuralı. Yalnızca **bir kez** yapılır.
+Discord Rich Presence için bir Application ID gerekir. Bu kurulum için bir kez oluşturmanız yeterlidir.
  
 1. [discord.com/developers/applications](https://discord.com/developers/applications) → **New Application**
 2. İsim ver (örn. `"Apple Music"`) — bu isim profilinde görünmez
